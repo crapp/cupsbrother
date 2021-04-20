@@ -26,6 +26,10 @@ docker run -d -p 631:631 -v /var/run/dbus:/var/run/dbus --name cupsd mycupsdimg
 
 __Note__: The admin user/password for the Cups server is `print`/`print`
 
+## Add supported Brother printer
+
+URI: lpd://(printer's IP address)/binary_p1
+
 ## Configure Cups client on your machine
 1. Install the `cups-client` package
 2. Edit the `/etc/cups/client.conf`, set `ServerName` to `127.0.0.1:631`
