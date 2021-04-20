@@ -22,8 +22,15 @@ RUN apt-get update \
   hplip \
   smbclient \
   printer-driver-cups-pdf \
+  wget \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
+
+# URI: lpd://(printer's IP address)/binary_p1
+RUN wget https://download.brother.com/welcome/dlf101123/brgenml1lpr-3.1.0-1.i386.deb \
+&&  wget https://download.brother.com/welcome/dlf101125/brgenml1cupswrapper-3.1.0-1.i386.deb \
+&&  sudo dpkg -i brgenml1lpr-3.1.0-1.i386.deb \
+&&  sudo dpkg -i brgenml1cupswrapper-3.1.0-1.i386.deb
 
 # Add user and disable sudo password checking
 RUN useradd \
