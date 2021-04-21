@@ -1,9 +1,9 @@
 # based on https://github.com/olbat/dockerfiles/tree/master/cupsd
 
-ARG BASE_USER
-ARG MAINTAINER
-FROM ${BASE_USER}/debian:testing
-MAINTAINER $MAINTAINER
+# ARG BASE_USER
+# ARG MAINTAINER
+FROM debian:testing
+# MAINTAINER $MAINTAINER
 
 # Install Packages (basic tools, cups, basic drivers, HP drivers)
 RUN apt-get update \
